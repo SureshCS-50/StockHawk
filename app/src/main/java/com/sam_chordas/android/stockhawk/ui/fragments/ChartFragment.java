@@ -1,5 +1,6 @@
 package com.sam_chordas.android.stockhawk.ui.fragments;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 
 import com.sam_chordas.android.stockhawk.R;
+import com.sam_chordas.android.stockhawk.utils.Constants;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -35,8 +37,15 @@ public class ChartFragment extends Fragment {
         stock = symbol.getString(getResources().getString(R.string.key_symbol));
         webView = (WebView) rootView.findViewById(R.id.web_chart);
         webView.getSettings().setJavaScriptEnabled(true);
-        String s = "http://empyrean-aurora-455.appspot.com/charts.php?symbol=" + stock;
-        webView.loadUrl(s);
+
+        Uri.Builder builder = new Uri.Builder();
+        builder.scheme("http")
+                .authority(Constants.BASE_URL)
+                .appendPath(Constants.CHART_URL)
+                .appendQueryParameter(Constants.KEY_SYMBOL, stock);
+
+        webView.loadUrl(builder.build().toString());
+
         return rootView;
     }
 }

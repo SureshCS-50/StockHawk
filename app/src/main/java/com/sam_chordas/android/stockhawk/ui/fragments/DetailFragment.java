@@ -1,5 +1,6 @@
 package com.sam_chordas.android.stockhawk.ui.fragments;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -17,6 +18,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.sam_chordas.android.stockhawk.R;
+import com.sam_chordas.android.stockhawk.utils.Constants;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -57,15 +59,22 @@ public class DetailFragment extends Fragment {
         lastprice = (TextView) rootView.findViewById(R.id.txtPrice);
         change = (TextView) rootView.findViewById(R.id.txtChangeValue);
         changepercent = (TextView) rootView.findViewById(R.id.txtChangePercent);
-        data();
+
+        Uri.Builder builder = new Uri.Builder();
+        builder.scheme("http")
+                .authority(Constants.BASE_URL)
+                .appendPath(Constants.SERVICE_URL)
+                .appendQueryParameter("quote", "yes")
+                .appendQueryParameter(Constants.KEY_SYMBOL, stock);
+
+        data(builder.build().toString());
+
         return rootView;
     }
 
-    public void data() {
+    public void data(String url) {
         try {
-            final String BASE_URL = "http://empyrean-aurora-455.appspot.com/service.php?quote=yes&symbol=";
 
-            String url = BASE_URL + stock;
             StringRequest stringRequest = new StringRequest(Request.Method.GET,
                     url,
                     new Response.Listener<String>() {

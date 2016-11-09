@@ -1,5 +1,6 @@
 package com.sam_chordas.android.stockhawk.ui.fragments;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -19,6 +20,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.sam_chordas.android.stockhawk.R;
 import com.sam_chordas.android.stockhawk.adapters.NewsAdapter;
+import com.sam_chordas.android.stockhawk.utils.Constants;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -62,16 +64,23 @@ public class NewsFragment extends Fragment {
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         rv.setLayoutManager(llm);
 
-        data();
+        Uri.Builder builder = new Uri.Builder();
+        builder.scheme("http")
+                .authority(Constants.BASE_URL)
+                .appendPath(Constants.SERVICE_URL)
+                .appendQueryParameter(Constants.KEY_SEARCH_TEXT, stock)
+                .appendQueryParameter(Constants.KEY_NEWS, "yes");
+
+        data(builder.build().toString());
+
         return rootView;
     }
 
-    private void data() {
+    private void data(String url) {
         try {
-            final String BASE_URL = "http://empyrean-aurora-455.appspot.com/service.php?searchText=" + stock + "&news=yes";
 
             StringRequest stringRequest = new StringRequest(Request.Method.GET,
-                    BASE_URL,
+                    url,
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
