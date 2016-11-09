@@ -9,4 +9,7 @@ public class Constants {
     public static final String TAG_INIT = "init";
     public static final String TAG_PERIODIC = "periodic";
     public static final String KEY_SYMBOL = "symbol";
+    public static final String EVENT_UPDATE_WIDGET = "event_update_widget";
+    public static final String METHOD_SET_BACKGROUND_RESOURCE = "setBackgroundResource";
+
 }

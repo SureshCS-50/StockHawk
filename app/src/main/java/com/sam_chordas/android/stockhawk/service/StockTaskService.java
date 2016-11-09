@@ -2,6 +2,7 @@ package com.sam_chordas.android.stockhawk.service;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.content.OperationApplicationException;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
@@ -124,6 +125,7 @@ public class StockTaskService extends GcmTaskService{
           }
           mContext.getContentResolver().applyBatch(QuoteProvider.AUTHORITY,
               Utils.quoteJsonToContentVals(getResponse));
+          updateWidget();
         }catch (RemoteException | OperationApplicationException e){
           Log.e(LOG_TAG, "Error applying batch insert", e);
         }
@@ -133,6 +135,12 @@ public class StockTaskService extends GcmTaskService{
     }
 
     return result;
+  }
+
+  private void updateWidget() {
+    Intent updatedDataIntent = new Intent(Constants.EVENT_UPDATE_WIDGET);
+    updatedDataIntent.setPackage(mContext.getPackageName());
+    mContext.sendBroadcast(updatedDataIntent);
   }
 
 }

@@ -55,7 +55,7 @@ public class NewsFragment extends Fragment {
         Bundle symbol = getArguments();
         stock = symbol.getString(getResources().getString(R.string.key_symbol));
 
-        RecyclerView rv = (RecyclerView) rootView.findViewById(R.id.recycler_view_news);
+        RecyclerView rv = (RecyclerView) rootView.findViewById(R.id.recyclerViewNews);
         rv.setHasFixedSize(true);
         adapter = new NewsAdapter(getContext(), title, description, source_url);
         rv.setAdapter(adapter);
