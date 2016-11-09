@@ -1,4 +1,4 @@
-package com.sam_chordas.android.stockhawk.ui;
+package com.sam_chordas.android.stockhawk.ui.activities;
 
 import android.app.LoaderManager;
 import android.content.Context;
@@ -6,10 +6,7 @@ import android.content.CursorLoader;
 import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -90,8 +87,15 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
                 new RecyclerViewItemClickListener.OnItemClickListener() {
                     @Override
                     public void onItemClick(View v, int position) {
-                        //TODO:
-                        // do something on item click
+                        if(Utils.hasConnection(MyStocksActivity.this)) {
+                            Intent intent = new Intent(MyStocksActivity.this, StockDetailsActivity.class);
+                            mCursor.moveToPosition(position);
+                            String symbol = getResources().getString(R.string.key_symbol);
+                            intent.putExtra(symbol, mCursor.getString(mCursor.getColumnIndex(symbol)));
+                            startActivity(intent);
+                        } else{
+                            networkToast();
+                        }
                     }
                 }));
         mRecyclerView.setAdapter(mCursorAdapter);
@@ -124,7 +128,7 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
                                     } else {
                                         // Add the stock to DB
                                         mServiceIntent.putExtra(Constants.KEY_TAG, "add");
-                                        mServiceIntent.putExtra("symbol", input.toString());
+                                        mServiceIntent.putExtra(Constants.KEY_SYMBOL, input.toString());
                                         startService(mServiceIntent);
                                         c.close();
                                     }

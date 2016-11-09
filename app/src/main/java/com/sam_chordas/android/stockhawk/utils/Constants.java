@@ -8,4 +8,5 @@ public class Constants {
     public static final String KEY_TAG = "tag";
     public static final String TAG_INIT = "init";
     public static final String TAG_PERIODIC = "periodic";
+    public static final String KEY_SYMBOL = "symbol";
 }
