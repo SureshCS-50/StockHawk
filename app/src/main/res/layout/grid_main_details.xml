@@ -1,51 +1,51 @@
 <android.support.v7.widget.GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tool="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
     android:background="@android:color/background_light"
     app:columnCount="2">
 
     <Space
         android:layout_height="@dimen/dimen_50"
-        app:layout_columnSpan="2" />
+        app:layout_columnSpan="2"/>
 
     <TextView
         android:id="@+id/txtPrice"
         android:layout_width="0dp"
         android:layout_height="@dimen/dimen_100"
-        android:gravity="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@android:color/background_dark"
         app:layout_columnWeight="2"
-        app:layout_gravity="fill_horizontal"
         app:layout_rowSpan="2"
-        tool:fontFamily="sans-serif-condensed" />
+        android:gravity="center"
+        app:layout_gravity="fill_horizontal"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="@android:color/background_dark"
+        tool:fontFamily="sans-serif-condensed"  />
 
     <TextView
         android:id="@+id/txtChangeValue"
         android:layout_width="0dp"
         android:layout_height="@dimen/dimen_60"
-        android:gravity="start"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@android:color/darker_gray"
         app:layout_columnWeight="1"
+        android:gravity="start"
         app:layout_gravity="fill_horizontal"
+        android:textColor="@android:color/darker_gray"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         tool:fontFamily="sans-serif" />
 
     <TextView
         android:id="@+id/txtChangePercent"
         android:layout_width="0dp"
         android:layout_height="@dimen/dimen_40"
-        android:gravity="start"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@android:color/darker_gray"
         app:layout_columnWeight="1"
+        android:gravity="start"
         app:layout_gravity="fill_horizontal"
-        tool:fontFamily="sans-serif-medium" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@android:color/darker_gray"
+        tool:fontFamily="sans-serif-medium"/>
 
     <Space
         android:layout_height="@dimen/dimen_50"
-        app:layout_columnSpan="2" />
+        app:layout_columnSpan="2"/>
 
 </android.support.v7.widget.GridLayout>

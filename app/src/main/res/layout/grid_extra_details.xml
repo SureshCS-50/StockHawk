@@ -5,20 +5,16 @@
     android:layout_height="wrap_content"
     app:columnCount="2">
 
-    <Space
-        android:layout_height="@dimen/dimen_50"
-        app:layout_columnSpan="2" />
-
     <TextView
         android:layout_width="0dp"
         android:layout_height="@dimen/dimen_40"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:gravity="start"
+        android:gravity="center"
+        android:text="Name"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_columnWeight="1"
-        app:layout_gravity="fill_horizontal"
         tool:fontFamily="sans-serif" />
 
     <TextView
@@ -26,11 +22,10 @@
         android:layout_width="0dp"
         android:layout_height="@dimen/dimen_40"
         android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:gravity="start"
+        android:gravity="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/background_light"
         app:layout_columnWeight="1"
-        app:layout_gravity="fill_horizontal"
         tool:fontFamily="sans-serif" />
 
     <TextView
@@ -39,46 +34,21 @@
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:gravity="start"
+        android:gravity="center"
+        android:text="High"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_columnWeight="1"
-        app:layout_gravity="fill_horizontal"
         tool:fontFamily="sans-serif" />
 
     <TextView
-        android:id="@+id/high"
+        android:id="@+id/txtHigh"
         android:layout_width="0dp"
         android:layout_height="@dimen/dimen_40"
         android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:gravity="start"
+        android:gravity="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/background_light"
         app:layout_columnWeight="1"
-        app:layout_gravity="fill_horizontal"
-        tool:fontFamily="sans-serif" />
-
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:gravity="start"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_columnWeight="1"
-        app:layout_gravity="fill_horizontal"
-        tool:fontFamily="sans-serif" />
-
-    <TextView
-        android:id="@+id/low"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/dimen_40"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:gravity="start"
-        android:textColor="@android:color/background_light"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_columnWeight="1"
-        app:layout_gravity="fill_horizontal"
         tool:fontFamily="sans-serif" />
 
     <TextView
@@ -87,26 +57,45 @@
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:gravity="start"
+        android:gravity="center"
+        android:text="Low"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_columnWeight="1"
-        app:layout_gravity="fill_horizontal"
         tool:fontFamily="sans-serif" />
 
     <TextView
-        android:id="@+id/open"
+        android:id="@+id/txtLow"
         android:layout_width="0dp"
         android:layout_height="@dimen/dimen_40"
         android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:gravity="start"
+        android:gravity="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/background_light"
         app:layout_columnWeight="1"
-        app:layout_gravity="fill_horizontal"
         tool:fontFamily="sans-serif" />
 
-    <Space
-        android:layout_height="@dimen/dimen_50"
-        app:layout_columnSpan="2" />
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dimen_40"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:gravity="center"
+        android:text="Open"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_columnWeight="1"
+        tool:fontFamily="sans-serif" />
+
+    <TextView
+        android:id="@+id/txtOpen"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dimen_40"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@android:color/background_light"
+        app:layout_columnWeight="1"
+        tool:fontFamily="sans-serif" />
+
 
 </android.support.v7.widget.GridLayout>

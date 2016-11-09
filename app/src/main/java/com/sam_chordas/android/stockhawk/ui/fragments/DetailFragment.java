@@ -51,9 +51,9 @@ public class DetailFragment extends Fragment {
         stock = symbol.getString(getResources().getString(R.string.key_symbol));
 
         name = (TextView) rootView.findViewById(R.id.txtName);
-        high = (TextView) rootView.findViewById(R.id.high);
-        low = (TextView) rootView.findViewById(R.id.low);
-        open = (TextView) rootView.findViewById(R.id.open);
+        high = (TextView) rootView.findViewById(R.id.txtHigh);
+        low = (TextView) rootView.findViewById(R.id.txtLow);
+        open = (TextView) rootView.findViewById(R.id.txtOpen);
         lastprice = (TextView) rootView.findViewById(R.id.txtPrice);
         change = (TextView) rootView.findViewById(R.id.txtChangeValue);
         changepercent = (TextView) rootView.findViewById(R.id.txtChangePercent);

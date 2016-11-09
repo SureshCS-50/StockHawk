@@ -40,13 +40,14 @@ public class StockDetailsActivity extends AppCompatActivity {
             getSupportActionBar().setTitle(symbol.toUpperCase());
 
             mViewPager = (ViewPager) findViewById(R.id.viewpager);
+            mTabLayout = (TabLayout) findViewById(R.id.tabs);
+
             mAdapter = new ViewPagerAdapter(getSupportFragmentManager(), extras);
             mAdapter.addFragment(new DetailFragment(), getString(R.string.str_detail_fragment));
             mAdapter.addFragment(new ChartFragment(), getString(R.string.str_chart_fragment));
             mAdapter.addFragment(new NewsFragment(), getString(R.string.str_news_fragment));
             mViewPager.setAdapter(mAdapter);
 
-            mTabLayout = (TabLayout) findViewById(R.id.tabs);
             mTabLayout.setupWithViewPager(mViewPager);
         }
 
