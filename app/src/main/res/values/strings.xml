@@ -1,23 +1,27 @@
 <resources>
-    <string name="app_name">Stock Hawk</string>
+    <string name="app_name" translatable="true">Stock Hawk</string>
 
-    <string name="action_example">Example action</string>
+    <string name="action_example" translatable="true">Example action</string>
 
-    <string name="action_settings">Settings</string>
-    <string name="action_change_units">Change Units</string>
-    <string name="symbol_search">Symbol Search</string>
-    <string name="content_test">Search for a Stock Symbol</string>
-    <string name="input_hint">FB</string>
+    <string name="action_settings" translatable="true">Settings</string>
+    <string name="action_change_units" translatable="true">Change Units</string>
+    <string name="symbol_search" translatable="true">Symbol Search</string>
+    <string name="content_test" translatable="true">Search for a Stock Symbol</string>
+    <string name="input_hint" translatable="true">FB</string>
     <string name="input_prefill"></string>
-    <string name="network_toast">Uh-oh! This app requires an internet connection</string>
-    <string name="str_stock_already_saved">This stock is already saved!</string>
-    <string name="str_add_stock">Add new stock</string>
-    <string name="empty_text">Stocks not available</string>
+    <string name="network_toast" translatable="true">Uh-oh! This app requires an internet connection</string>
+    <string name="str_stock_already_saved" translatable="true">This stock is already saved!</string>
+    <string name="str_add_stock" translatable="true">Add new stock</string>
+    <string name="empty_text" translatable="true">Stocks not available</string>
+    <string name="str_name" translatable="true">Name</string>
+    <string name="str_high" translatable="true">High</string>
+    <string name="str_low" translatable="true">Low</string>
+    <string name="str_open" translatable="true">Open</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="str_detail_fragment">detail_fragment</string>
-    <string name="str_chart_fragment">chart_fragment</string>
-    <string name="str_news_fragment">news_fragment</string>
-    <string name="key_symbol">symbol</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="str_detail_fragment">Details</string>
+    <string name="str_chart_fragment">Chart</string>
+    <string name="str_news_fragment">NEWS</string>
+    <string name="key_symbol" translatable="false">symbol</string>
 </resources>
