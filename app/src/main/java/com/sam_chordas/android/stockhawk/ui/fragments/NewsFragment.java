@@ -37,6 +37,7 @@ import java.util.Map;
  * create an instance of this fragment.
  */
 public class NewsFragment extends Fragment {
+
     private ArrayList<String> title = new ArrayList<>();
     private ArrayList<String> source_url = new ArrayList<>();
     private ArrayList<String> description = new ArrayList<>();
