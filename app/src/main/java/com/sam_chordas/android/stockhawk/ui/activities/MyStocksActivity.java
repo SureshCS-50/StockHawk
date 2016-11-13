@@ -115,9 +115,10 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
                                 public void onInput(MaterialDialog dialog, CharSequence input) {
                                     // On FAB click, receive user input. Make sure the stock doesn't already exist
                                     // in the DB and proceed accordingly
+                                    String symbol = input.toString().toUpperCase();
                                     Cursor c = getContentResolver().query(QuoteProvider.Quotes.CONTENT_URI,
                                             new String[]{QuoteColumns.SYMBOL}, QuoteColumns.SYMBOL + "= ?",
-                                            new String[]{input.toString().toUpperCase()}, null);
+                                            new String[]{symbol}, null);
                                     if (c.getCount() != 0) {
                                         Toast toast =
                                                 Toast.makeText(MyStocksActivity.this, R.string.str_stock_already_saved,
@@ -128,7 +129,7 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
                                     } else {
                                         // Add the stock to DB
                                         mServiceIntent.putExtra(Constants.KEY_TAG, "add");
-                                        mServiceIntent.putExtra(Constants.KEY_SYMBOL, input.toString());
+                                        mServiceIntent.putExtra(Constants.KEY_SYMBOL, symbol);
                                         startService(mServiceIntent);
                                         c.close();
                                     }
